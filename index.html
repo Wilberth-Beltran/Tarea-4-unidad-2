@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/66c3e37d5e.js" crossorigin="anonymous"></script>
+    <title>Pestañas</title>
+</head>
+<body>
+    <header class="ancho">
+        <h5>NUESTROS PROYECTOS</h5>
+        <h2>Últimos Proyectos</h2>
+    </header>
+
+    <ul class="pestañas ancho">
+        <li><a href="#pestaña1">Todos los elementos</a></li>
+        <li><a href="#pestaña2">Aplicación Móvil</a></li>
+        <li><a href="#pestaña3">Aplicación Web</a></li>
+        <li><a href="#pestaña4">Software Personalizado</a></li>
+        <li><a href="#pestaña5">UI/UX</a></li>
+    </ul>
+
+    <section class="imagenes">
+        <div class="elementos ancho">
+            <figure class="imagen1">
+                <img src="img/port7.jpg" alt="Proyecto Messenger">
+                <div class="info">
+                    <a href="#" class="icono"><i class="fa-brands fa-facebook-messenger"></i></a>
+                    <h3>Messenger</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dignissimos possimus aliquid dolores laborum voluptas vel</p>
+                    <a href="#" class="icono2"><i class="fa-solid fa-circle-chevron-right"></i></a>
+                </div>
+            </figure>
+
+            <figure class="imagen2">
+                <img src="img/port2.png" alt="Proyecto Messenger">
+                <div class="info">
+                    <a href="#" class="icono"><i class="fa-brands fa-facebook-messenger"></i></a>
+                    <h3>Messenger</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dignissimos possimus aliquid dolores laborum voluptas vel</p>
+                    <a href="#" class="icono2"><i class="fa-solid fa-circle-chevron-right"></i></a>
+                </div>
+            </figure>
+
+            <figure class="imagen3">
+                <img src="img/port3.jpg" alt="Proyecto de Aplicación Web">
+                <div class="info">
+                    <a href="#" class="icono"><i class="fa-brands fa-facebook-messenger"></i></a>
+                    <h3>Aplicación Web</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dignissimos possimus aliquid dolores laborum voluptas vel</p>
+                    <a href="#" class="icono2"><i class="fa-solid fa-circle-chevron-right"></i></a>
+                </div>
+            </figure>
+
+            <figure class="imagen4">
+                <img src="img/port6.jpg" alt="Proyecto de UI/UX">
+                <div class="info">
+                    <a href="#" class="icono"><i class="fa-brands fa-facebook-messenger"></i></a>
+                    <h3>UI/UX</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dignissimos possimus aliquid dolores laborum voluptas vel</p>
+                    <a href="#" class="icono2"><i class="fa-solid fa-circle-chevron-right"></i></a>
+                </div>
+            </figure>
+
+            <figure class="imagen5">
+                <img src="img/port6.jpg" alt="Proyecto de Software Personalizado">
+                <div class="info">
+                    <a href="#" class="icono"><i class="fa-brands fa-facebook-messenger"></i></a>
+                    <h3>Software Personalizado</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dignissimos possimus aliquid dolores laborum voluptas vel</p>
+                    <a href="#" class="icono2"><i class="fa-solid fa-circle-chevron-right"></i></a>
+                </div>
+            </figure>
+        </div>
+    </section>
+
+    <script>
+        $(".contenido-pestaña").hide();
+        $("ul.pestañas li:first").addClass("activo").show();
+        $(".contenido-pestaña:first").show();
+
+        $("ul.pestañas li").click(function(e) {
+            e.preventDefault();
+            $("ul.pestañas li").removeClass("activo");
+            $(this).addClass("activo");
+            $(".contenido-pestaña").hide();
+            var pestañaActiva = $(this).find("a").attr("href");
+            $(".elementos figure").addClass("oculto");
+
+            if (pestañaActiva === "#pestaña1") {
+                $(".elementos figure").removeClass("oculto");
+            } else if (pestañaActiva === "#pestaña2") {
+                $(".imagen1, .imagen4").removeClass("oculto");
+            } else if (pestañaActiva === "#pestaña3") {
+                $(".imagen2, .imagen3").removeClass("oculto");
+            } else if (pestañaActiva === "#pestaña4") {
+                $(".imagen5").removeClass("oculto");
+            } else if (pestañaActiva === "#pestaña5") {
+                $(".imagen4").removeClass("oculto");
+            }
+            return false;
+        });
+    </script>
+</body>
+</html>

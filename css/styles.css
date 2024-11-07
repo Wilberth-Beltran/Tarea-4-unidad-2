@@ -1,0 +1,142 @@
+body {
+    font-family: 'Istok Web', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+    background: #F0F3F8;
+}
+
+.ancho {
+    max-width: 1200px;
+    margin: auto;
+}
+
+header h5 {
+    color: #06B0FF;
+}
+
+ul.pestañas {
+    list-style: none;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+ul.pestañas li {
+    border: transparent;
+    background: transparent;
+    display: flex;
+    margin-right: 20px;
+    border-radius: 4px;
+}
+
+ul.pestañas li a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+}
+
+ul.pestañas li a:hover {
+    color: white !important;
+    border-radius: 4px;
+    background-color: blue;
+}
+
+html ul.pestañas li.activo {
+    background: blue;
+    color: white !important;
+}
+
+html ul.pestañas li.activo a:hover {
+    background: blue;
+    color: white !important;
+}
+
+.elementos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.oculto {
+    display: none;
+}
+
+.elementos figure {
+    transition: transform 0.2s ease;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.elementos figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagenes {
+    padding: 20px;
+}
+
+.info {
+    background-color: #7c5fffc9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.5s linear;
+    visibility: hidden; 
+    opacity: 0;
+}
+
+.info h3 {
+    margin: 10px;
+    font-size: 25px;
+    padding-top: 10px;
+    color: white;
+}
+
+.info p {
+    text-align: center;
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.elementos figure:hover .info {
+    top: 0%;
+    opacity: 1;
+    visibility: visible;  
+}
+
+.icono {
+    font-size: 70px;
+    color: white;
+}
+
+.icono2 {
+    font-size: 40px;
+    color: white;
+}
+
